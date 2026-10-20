@@ -1,6 +1,6 @@
 # E-commerce Analytics Pipeline — Snowflake + dbt
 
-An end-to-end data engineering project that transforms raw e-commerce CSV data into analytics-ready datasets using **Snowflake, dbt Core, SQL, and a Medallion Architecture**.
+An end-to-end data engineering project that transforms raw e-commerce CSV files with ~0.95M data into analytics-ready datasets using **Snowflake, dbt Core, SQL, and a Medallion Architecture**.
 
 The project demonstrates data ingestion, data cleaning, deduplication, dimensional modeling, data quality testing, Slowly Changing Dimensions (SCD Type 2), and business-focused analytics.
 
