@@ -1,0 +1,12 @@
+version: 2
+
+models:
+    - name: bronze
+      config:
+        materialized: table
+    - name: silver
+      config:
+        materialized: table
+    - name: gold
+      config:
+        materialized: table

@@ -1,0 +1,65 @@
+version: 2
+
+sources:
+  - name: staging
+    database: deproject
+    schema: staging
+    tables:
+      - name: users
+        columns:
+          - name: id
+            data_tests:
+              - not_null
+
+      - name: products
+        columns:
+          - name: id
+            data_tests:
+              - unique
+              - not_null
+
+      - name: orders
+        columns:
+          - name: order_id
+            data_tests:
+              - unique
+              - not_null
+          - name: user_id
+            data_tests:
+              - not_null
+              - relationships:
+                  arguments:
+                    to: source('staging', 'users')
+                    field: id
+                  config:
+                    severity: warn
+
+      - name: order_items
+        columns:
+          - name: id
+            data_tests:
+              - unique
+              - not_null
+          - name: order_id
+            data_tests:
+              - not_null
+              - relationships:
+                  arguments:
+                    to: source('staging', 'orders')
+                    field: order_id
+                  config:
+                    severity: warn
+
+      - name: inventory_items
+        columns:
+          - name: id
+            data_tests:
+              - unique
+              - not_null
+
+      - name: distribution_centers
+        columns:
+          - name: id
+            data_tests:
+              - unique
+              - not_null

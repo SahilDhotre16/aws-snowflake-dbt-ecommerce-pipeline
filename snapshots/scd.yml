@@ -1,0 +1,44 @@
+snapshots:
+  - name: dim_products_snapshot
+    relation: ref('dim_products')
+    config:
+      schema: snapshots
+      unique_key: product_id
+      strategy: check
+      check_cols:
+        - product_name
+        - brand
+        - category
+        - department
+        - sku
+        - cost
+        - retail_price
+
+  - name: dim_customers_snapshot
+    relation: ref('dim_customers')
+    config:
+      schema: snapshots
+      unique_key: user_id
+      strategy: check
+      check_cols:
+        - first_name
+        - last_name
+        - email
+        - age
+        - gender
+        - state
+        - city
+        - country
+        - postal_code
+        - traffic_source
+
+  - name: fct_orders_snapshot
+    relation: ref('fact_orders')
+    config:
+      schema: snapshots
+      unique_key: order_id
+      strategy: check
+      check_cols:
+        - user_id
+        - order_status
+        - num_of_item
