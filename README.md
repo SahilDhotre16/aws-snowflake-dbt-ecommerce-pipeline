@@ -31,7 +31,7 @@ MongoDB Atlas + MongoDB Compass
               |
               v
             GOLD
-     Dimensions, facts, OBT and marts
+     Dimensions, facts, and OBT
               |
               v
      Analytics-ready datasets
