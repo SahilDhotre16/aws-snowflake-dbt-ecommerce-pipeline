@@ -6,39 +6,45 @@ The project demonstrates data ingestion, data cleaning, deduplication, dimension
 
 ## Architecture
 
+```text
 MongoDB Atlas + MongoDB Compass
-            |
-            v
-AWS (DMS, S3, IAM)
-            |
-            v
-Snowflake
-            |
-            v
-STAGING
-Raw data loaded using COPY INTO
-            |
-            v
-BRONZE (DBT)
-Raw data replication
-            |
-            v
-SILVER
-Cleaning, standardization,
-deduplication and validation
-            |
-            v
-GOLD
-Dimensions, facts, OBT and marts
-            |
-            v
-Analytics-ready datasets
+              |
+              v
+       AWS DMS + Amazon S3
+          (AWS IAM)
+              |
+              v
+          Snowflake
+              |
+              v
+          STAGING
+     Raw data loaded using COPY INTO
+              |
+              v
+           BRONZE
+        Raw data replication
+              |
+              v
+           SILVER
+  Cleaning, standardization, deduplication
+          and validation
+              |
+              v
+            GOLD
+     Dimensions, facts, OBT and marts
+              |
+              v
+     Analytics-ready datasets
 
 dbt Snapshots --> SCD Type 2 historical tracking
 ```
 
 ## Tech Stack
 
+- **Source:** MongoDB Atlas, MongoDB Compass
+- **CDC and Data Migration:** AWS DMS
+- **Cloud Storage:** Amazon S3
+- **Access Management:** AWS IAM
 - **Data Warehouse:** Snowflake
 - **Transformation:** dbt Core, dbt-snowflake
 - **Languages:** SQL, Jinja
@@ -47,7 +53,7 @@ dbt Snapshots --> SCD Type 2 historical tracking
 - **Data Modeling:** Star Schema, Fact and Dimension Tables
 - **Data Quality:** dbt data tests
 - **Historical Tracking:** dbt Snapshots, SCD Type 2
-- **Development:** Python virtual environment managed with uv, VS Code
+- **Development:** Python, uv, VS Code
 - **Version Control:** Git and GitHub
 
 ## Dataset
