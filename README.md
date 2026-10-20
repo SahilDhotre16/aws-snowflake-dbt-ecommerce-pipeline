@@ -289,4 +289,6 @@ The results demonstrate a successful build with known data-quality anomalies sur
 
 **Sahil Dhotre**
 
-Aspiring Data Engineer | SQL | Python | Snowflake | dbt | Data Modeling
+Aspiring Data Engineer | SQL | Python | Snowflake | dbt |
+
+Linkedin - https://www.linkedin.com/in/sahil-dhotre-77b00a34b/
